@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Products</title>
+</head>
+<body>
+    <div>
+        <br> <br> <br>
+        <h1 style="text-align: center">Products</h1>
+        <div>
+
+            <div class="card" style="width: 18rem;">
+                {% for product in products %}
+                <div class="card-body">
+                    <p>--------------------</p>
+                    <h5 class="card-title">{{product.category_code}}</h5>
+                    <h6>{{product.category_name}}</h6>
+                    <h6>{{product.subcategory_code}}</h6>
+                    <h6>{{product.subcategory_name}}</h6>
+                    <h6>{{product.productname}}</h6>
+                    <h6>{{product.price}}</h6>
+                    <h6>{{product.description}}</h6>
+                </div>
+                {%endfor%}
+            </div>
+
+        </div>
+
+    </div>
+</body>
+</html>

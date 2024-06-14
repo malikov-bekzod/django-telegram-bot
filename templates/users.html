@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+</head>
+<body>
+    <div>
+        <br> <br> <br>
+        <h1 style="text-align: center">users</h1>
+        <div>
+
+            <div class="card" style="width: 18rem;">
+                {% for user in product_user %}
+                <p>-------------------</p>
+                <div class="card-body">
+                    <h5 class="card-title">fulname : {{user.full_name}} username: {{user.username}}</h5>
+                </div>
+                {%endfor%}
+            </div>
+
+        </div>
+
+
+    </div>
+</body>
+</html>

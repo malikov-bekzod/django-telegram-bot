@@ -1,0 +1,82 @@
+import os
+from pydantic import BaseModel
+from typing import Optional
+
+
+class RegisterUser(BaseModel):
+    id: Optional[int]
+    first_name: str
+    last_name: str
+    username: str
+    password: str
+    email: str
+
+
+class LoginUser(BaseModel):
+    username: str
+    password: str
+
+
+class CityModel(BaseModel):
+    id: Optional[int]
+    name: str
+
+
+class AddressModel(BaseModel):
+    id: Optional[int]
+    city_id: Optional[int]
+    name: str
+
+
+class LessonModel(BaseModel):
+    id: Optional[int]
+    title: str
+    description: str
+    homework: str
+
+
+class ModuleModel(BaseModel):
+    id: Optional[int]
+    name: str
+    description: str
+    lesson_id: Optional[int]
+
+
+class CourseModel(BaseModel):
+    id: Optional[int]
+    name: str
+    description: str
+    price: Optional[int]
+
+
+class PayTypeModel(BaseModel):
+    id: Optional[int]
+    type: str
+
+
+class PayModel(BaseModel):
+    id: Optional[int]
+    user_id: Optional[int]
+    amount: Optional[float]
+    course_id: Optional[int]
+    type: Optional[int]
+
+
+class ProductsProductBase(BaseModel):
+    category_code: str
+    category_name: str
+    subcategory_code: str
+    subcategory_name: str
+    productname: str
+    photo: Optional[str] = None
+    price: int
+    description: Optional[str] = None
+
+
+class ProductsUserBase(BaseModel):
+    full_name: str
+    username: Optional[str] = None
+    telegram_id: int
+
+class JwtModel(BaseModel):
+    authjwt_secret_key: str = '192ba1860ccd8dcb1577983848289f3792e3c896fd7df9277a773d39d2c9e291'
